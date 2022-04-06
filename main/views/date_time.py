@@ -1,12 +1,12 @@
 import falcon
 import json
+from helpers import save_to_db
 
 
 class TimeStamp:
     def on_post(self, req, resp, timestamp, value):
         if timestamp and value:
-            ts = TimeStamp(timestamp, value)
-            ts.save()
+            save_to_db(timestamp, value)
             resp.content_type = "application/json"
             resp.body = json.dumps({"timestamp": timestamp, "value": value})
             resp.status = falcon.HTTP_200
