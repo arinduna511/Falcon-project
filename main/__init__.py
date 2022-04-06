@@ -1,5 +1,5 @@
 import falcon
-from .views.datetime import TimeStamp, Graph
+from .views.date_time import TimeStamp, Graph
 
 
 app = falcon.API()
